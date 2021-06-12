@@ -7,14 +7,15 @@ import java.util.Scanner;
 // 3 - Classe
 public class Medidas {
     // 3.1 - Atributos
-    static Scanner entrada;
+    static Scanner entrada = new Scanner(System.in);
+
 
     // 3.2 - Métodos e Funções
     public static void main(String[] args){
         String opcao;
-        int area; // receber o resultado dos cálculos de área
+        int area = 0; // receber o resultado dos cálculos de área
 
-        entrada = new Scanner(System.in); //instanciar o objeto de leitura do console
+        //entrada = new Scanner(System.in); //instanciar o objeto de leitura do console
 
         System.out.println("Escolha o Calculo Desejado");
         System.out.println("(1) - Area do Quadrado");
@@ -26,9 +27,6 @@ public class Medidas {
         switch (opcao){
             case "1":
                 area = calcularAreaDoQuadrado();
-                break;
-            case "2":
-                area = calcularAreaDoRetangulo();
                 break;
             default:
                 throw new IllegalStateException("Valor invalido: " + opcao);
@@ -43,18 +41,8 @@ public class Medidas {
 
         System.out.println("Digite o tamanho do lado: ");
         lado = entrada.nextInt(); //leitura do tamanho do lado
-        return lado ^ 2; // retorna a área do quadrado
+        return lado * lado; // retorna a área do quadrants
 
     }
-    public static int calcularAreaDoRetangulo() {
 
-        int base; // tamanho da base do retangulo
-        int altura; // tamanho da altura do retangulo
-
-        System.out.println("Digite o tamanho do lado: ");
-        base = entrada.nextInt(); //leitura do tamanho do lado
-        altura = entrada.nextInt(); //leitura do tamanho do lado
-        return base * altura; // retorna a área do quadrado
-
-    }
 }
