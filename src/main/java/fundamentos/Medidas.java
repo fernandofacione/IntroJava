@@ -21,11 +21,14 @@ public class Medidas {
 
     }
 
-    public static int calcularAreaDoQuadrado(){
+    public static int calcularAreaDoQuadrado() {
+
+        int lado; // tamanho do lado do quadrado
+
         Scanner entrada = new Scanner(System.in); // criamos o objeto para ler uma entrada no console
         System.out.println("Digite o tamanho do lado: ");
-        int lado = entrada.nextInt(); //leitura do tamanho do lado
-        int area = lado ^ 2;
+        lado = entrada.nextInt(); //leitura do tamanho do lado
+        return lado ^ 2; // retorna a área do quadrado
 
     }
 
